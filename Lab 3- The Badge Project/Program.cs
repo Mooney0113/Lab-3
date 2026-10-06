@@ -11,6 +11,7 @@ Description:
 //Part 1
 
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 System.Console.Write("What is your full name?");
 
@@ -39,5 +40,32 @@ Console.WriteLine("Locker Number: " + lockerNumber);
 
 
 //Part 3
+
+Console.Write("What is your dorms x location?");
+double dormX = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("What is your dorms y location?");
+double dormY = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("What is the classes x location?");
+double classX = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("What is the classes y location?");
+double classY = Convert.ToDouble(Console.ReadLine());
+
+Console.Write("What is your walking feet per second?");
+double feetPerSecond = Convert.ToDouble(Console.ReadLine());
+
+
+
+double distance = Math.Sqrt(Math.Pow(classX - dormX,2) + Math.Pow(classY - dormY, 2));
+double walkTime = distance / feetPerSecond ;
+int totalSeconds = Convert.ToInt32 (walkTime) ;
+int minutes = totalSeconds / 60 ;
+int seconds = totalSeconds % 60 ; 
+
+
+Console.WriteLine("Distance: " + distance.ToString("F1"));
+Console.WriteLine("Walking time: " + minutes + " minutes "  + seconds + " seconds " );
 
 
