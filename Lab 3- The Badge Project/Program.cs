@@ -23,7 +23,7 @@ string firstName = fullName.Substring(0, spacePosition);
 string lastName = fullName.Substring(spacePosition + 1) ;
  
  Console.WriteLine("Name on badge: " + fullName.ToUpper()) ;
- Console.WriteLine("Username:"  + fullName) ;
+ Console.WriteLine("Username:"  + fullName.Substring(0 , 1).ToLower().Replace(" ","") + lastName.ToLower()) ;
 Console.WriteLine("Initials:"  + fullName.Substring(0 , 1) + "." + lastName.Substring(0 , 1) + "." );
  Console.WriteLine("Letters in Last Name :" + lastName.Length );
 
@@ -68,4 +68,16 @@ int seconds = totalSeconds % 60 ;
 Console.WriteLine("Distance: " + distance.ToString("F1"));
 Console.WriteLine("Walking time: " + minutes + " minutes "  + seconds + " seconds " );
 
+//Part 4
 
+int checkDigit = studentID % 9 ;
+
+Console.WriteLine("==================================");
+Console.WriteLine("       ETSU STUDENT BADGE         ");
+Console.WriteLine("==================================");
+Console.WriteLine("Name: "  + fullName.ToUpper());
+Console.WriteLine("UserName: " + fullName.Substring(0 , 1).ToLower().Replace(" ","") + lastName.ToLower());
+Console.WriteLine("ID: " + studentID + "-" + checkDigit );
+Console.WriteLine("Locker: " + lockerNumber);
+Console.WriteLine("Walk " + minutes + " mins " + seconds + " secs ");
+Console.WriteLine("==================================");
